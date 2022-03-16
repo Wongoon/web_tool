@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>유리 계산기</title>
+    <link rel="stylesheet" href="css/calculator.css">
+    <script src="javascript/calculator.js"></script>
+</head>
+
+<body>
+    <div class="back">
+        <a href="../../index.html"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
+    </div>
+    <div class="btn">
+        <strong>🌞</strong>
+        <strong>🌙</strong>
+    </div>
+    <div class="container">
+        <form action="" class="calculator" name="calc"> <!-- 계산기 화면 구현 -->
+            <input type="text" readonly id="result" name="txt" value="">
+            <span class="button clear" onclick="reset()"><i>C</i></span>
+            <span class="button" onclick="calc.txt.value=calc.txt.value.substring(0,calc.txt.value.length - 1)">
+                <i><ion-icon name="backspace-outline"></ion-icon></i>
+            </span>
+            <span class="button square" onclick="calc.txt.value = Math.pow(calc.txt.value, 2)"><i>x<sup>2</sup></i></span>
+            <span class="button" onclick="add('/')"><i>/</i></span>
+            <span class="button" onclick="add(7)"><i>7</i></span>
+            <span class="button" onclick="add(8)"><i>8</i></span>
+            <span class="button" onclick="add(9)"><i>9</i></span>
+            <span class="button" onclick="add('*')"><i>×</i></span>
+            <span class="button" onclick="add(4)"><i>4</i></span>
+            <span class="button" onclick="add(5)"><i>5</i></span>
+            <span class="button" onclick="add(6)"><i>6</i></span>
+            <span class="button" onclick="add('-')"><i>-</i></span>
+            <span class="button" onclick="add(1)"><i>1</i></span>
+            <span class="button" onclick="add(2)"><i>2</i></span>
+            <span class="button" onclick="add(3)"><i>3</i></span>
+            <span class="button" onclick="add('+')"><i>+</i></span>
+            <span class="button zero" onclick="add(0)"><i>0</i></span>
+            <span class="button" onclick="add('.')"><i>.</i></span>
+            <span class="button equal" onclick="calculate()"><i>=</i></span>
+        </form>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let body = document.querySelector('body');
+        let btn = document.querySelector('.btn');
+        btn.onclick = function(){
+            body.classList.toggle('light');
+        }
+    </script>
+</body>
+</html>

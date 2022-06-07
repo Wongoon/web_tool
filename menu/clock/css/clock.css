@@ -149,6 +149,7 @@ div.back a ion-icon{
 #time div:nth-child(1)::after, #time div:nth-child(2)::after{
     content: ':';
     position: absolute;
+    color: #fff;
     right: -4px;
 }
 #time div:last-child{

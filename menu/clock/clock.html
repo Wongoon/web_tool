@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Clock</title>
     <link rel="stylesheet" href="css/clock.css">
@@ -48,9 +47,9 @@
             let mm = day.getMinutes() * 6;
             let ss = day.getSeconds() * 6;
 
-            hr.style.transform = `rotateZ(${hh + (mm / 12)}deg)`;
-            mn.style.transform = `rotateZ(${mm}deg)`;
-            sc.style.transform = `rotateZ(${ss}deg)`;
+            hr.style.transform = `rotateZ(${hh + (mm / 12) + 180}deg)`;
+            mn.style.transform = `rotateZ(${mm + 180}deg)`;
+            sc.style.transform = `rotateZ(${ss + 180}deg)`;
 
             let hours = document.getElementById('hours');
             let minutes = document.getElementById('minutes');
@@ -79,5 +78,4 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>

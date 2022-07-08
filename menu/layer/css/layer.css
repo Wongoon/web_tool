@@ -26,7 +26,7 @@ div.back a ion-icon{
 .container{
     position: relative;
     transform: skewY(-15deg) translateX(50px) translateY(50px);
-    animation: animateColor 2.5s linear infinite;
+    animation: animateColor 1.5s linear infinite;
 }
 .container::before{
     content: '';
@@ -55,15 +55,15 @@ div.back a ion-icon{
     background: #3e3f46;
     transition: 0.5s;
     z-index: var(--i);
-    animation: animate 5s ease-in-out infinite;
-    animation-delay: calc(-1s * var(--i));
+    animation: animate 2s ease-in-out infinite;
+    animation-delay: calc(-0.2s * var(--i));
 }
 @keyframes animate{
     0%, 100%{
-        transform: translateX(-70px);
+        transform: translateX(-50px);
     }
     50%{
-        transform: translateX(70px);
+        transform: translateX(50px);
     }
 }
 .container span:hover{

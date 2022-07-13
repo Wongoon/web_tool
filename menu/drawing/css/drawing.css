@@ -14,7 +14,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding-top: 50px;
+    padding-top: 0px;
 }
 .canvas{
     width:700px;
@@ -26,12 +26,15 @@ body{
 }
 .control{
     display: flex;
-    margin-top:30px;
+    margin-top:20px;
     flex-direction: column;
     align-items: center;
 }
+.control #Range{
+    margin-bottom: 15px;
+}
 .control .btns{
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 .control .btns button{
     all: unset;
@@ -63,7 +66,7 @@ body{
 .control .color span{
     display: block;
     width:50px;
-    margin-left: 5px;
+    margin-left: 3px;
     height:50px;
     background: var(--c);
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
@@ -73,4 +76,7 @@ body{
 }
 .control .color span:first-child{
     margin-left: 0;
+}
+.control .color span:active{
+    transform: scale(0.9);
 }

@@ -72,12 +72,9 @@ function CanvasClick() {
     }
   }
 
-// 우클릭 방지
-
 function CM(event) {
    event.preventDefault();
  }
-
 
 function SaveClick() {
   const image = canvas.toDataURL("image/png");
@@ -101,9 +98,9 @@ if (canvas) {
 }
 
 Array.from(colors).forEach(color => 
-    color.addEventListener("click", ColorClick));
+    color.addEventListener("click", ColorClick)
+);
 
-    
 if (range) {
     range.addEventListener("input", RangeChange);
 }

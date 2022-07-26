@@ -8,7 +8,20 @@
 a{
     text-decoration: none;
 }
+div.back{
+    position: absolute;
+    left:10px;
+    top:10px;
+}
+div.back a{
+    text-decoration: none;
+    color:#000;
+}
+div.back a ion-icon{
+    font-size: 4em;
+}
 body{
+    background-color: #ddd;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,7 +94,7 @@ body{
     cursor: pointer;
     background-color: white;
     padding: 10px 0px;
-    width: 120px;
+    width: 140px;
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),

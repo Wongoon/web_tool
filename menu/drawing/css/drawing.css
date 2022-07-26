@@ -21,17 +21,57 @@ body{
     height:700px;
     background-color: white;
     border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
     0 1px 3px rgba(0, 0, 0, 0.68);
 }
 .control{
     display: flex;
+    position: relative;
     margin-top:20px;
     flex-direction: column;
     align-items: center;
 }
-.control #Range{
+.control .range{
     margin-bottom: 15px;
+}
+.control #rangeValue{
+    position: absolute;
+    top: 2px;
+    right: 60px;
+    padding: 2px;
+    width: 50px;
+    background-color: #33a3ee;
+    color: #fff;
+    text-align: center;
+}
+.control #rangeValue::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    left: -5px;
+    background-color: #33a3ee;
+    color: #fff;
+}
+.control #Range{
+    box-sizing: content-box;
+    width: 200px;
+    height: 2px;
+    margin-bottom: 15px;
+    background-color: #333;
+    -webkit-appearance: none;
+    outline: none;
+    border-radius: 2px;
+}
+.control #Range::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #33a3ee;
 }
 .control .btns{
     margin-bottom: 15px;
@@ -60,23 +100,23 @@ body{
 .control .btns button:active{
     transform: scale(0.95);
 }
-.control .color{
+.control .colors{
     display: flex;
 }
-.control .color span{
+.control .colors span{
     display: block;
     width:50px;
     margin-left: 3px;
     height:50px;
-    background: var(--c);
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
     0 1px 3px rgba(0, 0, 0, 0.68);
     border-radius: 50%;
     cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
-.control .color span:first-child{
+.control .colors span:first-child{
     margin-left: 0;
 }
-.control .color span:active{
+.control .colors span:active{
     transform: scale(0.9);
 }

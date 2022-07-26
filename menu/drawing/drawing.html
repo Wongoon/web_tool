@@ -9,25 +9,34 @@
 
 <body>
     <canvas id="canvas" class="canvas"></canvas>
-    <script src="javascript/drawing.js"></script>
     <div class="control">
-        <input type="range" name="Range" id="Range" min="0.1" max="5.0" value="2.5" step="0.1">
-        <div class="btns">
-            <button class="fill">Fill</button>
-            <button class="save">Save</button>
+        <div class="range">
+            <span id="rangeValue">2.5</span>
+            <input type="range" name="Range" id="Range" min="0.1" max="5.0" value="2.5" step="0.1"
+            onmousemove="rangeSlider(this.value)" onChange="rangeSlider(this.value)">
         </div>
-        <div class="color">
-            <span style="--c:#000;"></span>
-            <span style="--c:#fff;"></span>
-            <span style="--c:#f33;"></span>
-            <span style="--c:orange;"></span>
-            <span style="--c:#ff3;"></span>
-            <span style="--c:#3f3;"></span>
-            <span style="--c:#33f;"></span>
-            <span style="--c:navy;"></span>
-            <span style="--c:purple;"></span>
+        <div class="btns">
+            <button id="fill">Fill</button>
+            <button id="save">Save</button>
+            <button id="delete">Delete</button>
+        </div>
+        <div class="colors">
+            <span class="color" style="background-color:#000;"></span>
+            <span class="color" style="background-color:#fff;"></span>
+            <span class="color" style="background-color:#f33;"></span>
+            <span class="color" style="background-color:orange;"></span>
+            <span class="color" style="background-color:#ff3;"></span>
+            <span class="color" style="background-color:#3f3;"></span>
+            <span class="color" style="background-color:#33f;"></span>
+            <span class="color" style="background-color:navy;"></span>
+            <span class="color" style="background-color:purple;"></span>
         </div>
     </div>
-
+    <script>
+        function rangeSlider(value){
+            document.getElementById('rangeValue').innerHTML = value;
+        }
+    </script>
+    <script src="javascript/drawing.js"></script>
 </body>
 </html>

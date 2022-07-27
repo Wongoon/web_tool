@@ -54,7 +54,7 @@ function keyDownEventHandler(e){
     switch(e.keyCode){
         case 37: setTimeout("moveLR(-1)",0); break;
         case 39: setTimeout("moveLR(1)",0); break;
-        case 32: setTimeout("rotateShape()",0); break;
+        case 38: setTimeout("rotateShape()",0); break;
         case 40: moveFast(); break;
         case 80: pause(); break;
     }
@@ -298,8 +298,8 @@ function updateScore(plusScore,combo){
 }
 function displayCombo(combo, finalScore){
     var comboStr = combo +" COMBO +"+finalScore;
-    document.getElementById("comboField").innerHTML = comboStr;
-    setTimeout(function(){document.getElementById("comboField").innerHTML = "";},700);
+    document.getElementById("combo").innerHTML = comboStr;
+    setTimeout(function(){document.getElementById("combo").innerHTML = "";},700);
 }
 
 // 종료 및 일시정지
@@ -307,19 +307,19 @@ function gameOver(){
     clearTimeout(movingThread);
     initExistField();
     alert("[Game Over]\nLevel: "+level+"\nScore: "+score);
-    document.getElementById("gameField").style.visibility = "hidden";
+    document.getElementById("container").style.visibility = "hidden";
     document.getElementById("gameover").style.visibility = "visible";
 }
 function pause(){
     if(isPaused){
         movingThread = setTimeout("moveDown()",movingSpeed);
         document.getElementById("pause").style.visibility = "hidden";
-        document.getElementById("gameField").style.visibility = "visible";
+        document.getElementById("container").style.visibility = "visible";
         isPaused = false;
     }
     else{
         clearTimeout(movingThread);
-        document.getElementById("gameField").style.visibility = "hidden";
+        document.getElementById("container").style.visibility = "hidden";
         document.getElementById("pause").style.visibility = "visible";
         isPaused = true;
     }

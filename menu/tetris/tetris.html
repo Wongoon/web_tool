@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Tetris Game</title>
@@ -10,39 +11,14 @@
     <div id="container">
         <div id="pause">
             <span class="title">Pause</span>
+            <br>
             <span class="resume">Press P To Resume</span>
         </div>
         <div id="gameover">
             <span class="title">Game Over</span>
+            <br>
             <span class="restart">Press F5 To Restart</span>
         </div>
-
-        <table id="nextTile" border="0">
-            <tr>
-                <td id="00"></td>
-                <td id="01"></td>
-                <td id="02"></td>
-                <td id="03"></td>
-            </tr>
-            <tr>
-                <td id="10"></td>
-                <td id="11"></td>
-                <td id="12"></td>
-                <td id="13"></td>
-            </tr>
-            <tr>
-                <td id="20"></td>
-                <td id="21"></td>
-                <td id="22"></td>
-                <td id="23"></td>
-            </tr>
-            <tr>
-                <td id="30"></td>
-                <td id="31"></td>
-                <td id="32"></td>
-                <td id="33"></td>
-            </tr>
-        </table>
 
         <div class="score_container">
             <span class="subtitle">Level</span>
@@ -50,14 +26,54 @@
             <span class="subtitle">Score</span>
             <span id="score">0</span>
             <span class="subtitle">Next</span>
-            <span id="nextTile_container"></span>
+            <span id="nextTile_container">
+                <table id="nextTile" border="0">
+                    <tr>
+                        <td id="00"></td>
+                        <td id="01"></td>
+                        <td id="02"></td>
+                        <td id="03"></td>
+                    </tr>
+                    <tr>
+                        <td id="10"></td>
+                        <td id="11"></td>
+                        <td id="12"></td>
+                        <td id="13"></td>
+                    </tr>
+                    <tr>
+                        <td id="20"></td>
+                        <td id="21"></td>
+                        <td id="22"></td>
+                        <td id="23"></td>
+                    </tr>
+                    <tr>
+                        <td id="30"></td>
+                        <td id="31"></td>
+                        <td id="32"></td>
+                        <td id="33"></td>
+                    </tr>
+                </table>
+            </span>
             <span class="subtitle">Help</span>
-            <span id="help">↑</span>
-            <span id="help">← ↓ →</span>
+            <span id="help">
+                <table class="arrow">
+                    <tr>
+                        <td></td>
+                        <td>↑</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>←</td>
+                        <td>↓</td>
+                        <td>→</td>
+                    </tr>
+                </table>
+            </span>
             <span id="help">P : Pause</span>
-            <div class="combo"></div>
+            <div id="combo"></div>
         </div>
         <script src="javascript/tetris.js"></script>
     </div>
 </body>
+
 </html>

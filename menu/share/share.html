@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/share.css">
+</head>
+<body>
+    <div class="back">
+        <a href="../../index.html"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
+    </div>
+    <div class="navigation">
+        <ul>
+            <li class="list active" style="--c: #ff3535;">
+                <span class="a" onclick="location.href='https://www.youtube.com/channel/UC-fAiuygTh4b-ItWSah7WOg';">
+                    <span class="icon"><i class="fa-brands fa-youtube"></i></span>
+                    <span class="text">Youtube</span>
+                </span>
+            </li>
+            <li class="list" style="--c: #5662f6;">
+                <span class="a">
+                    <span class="icon"><i class="fa-brands fa-discord"></i></span>
+                    <span class="text">Discord</span>
+                </span>
+                <span class="plus">Wongoon#7848</span>
+            </li>
+            <li class="list" style="--c: #0fc70f;">
+                <span class="a">
+                    <span class="icon"><i class="fa-solid fa-at"></i></span>
+                    <span class="text">Email</span>
+                </span>
+                <span class="plus">rmsgh64@gmail.com</span>
+            </li>
+            <li class="list" style="--c: #9b50b5;">
+                <span class="a" onclick="location.href='https://github.com/Wongoon';">
+                    <span class="icon"><i class="fa-brands fa-github"></i></span>
+                    <span class="text">Github</span>
+                </span>
+            </li>
+            <li class="list" style="--c: #171a21;">
+                <span class="a" onclick="location.href='https://steamcommunity.com/profiles/76561198834853584/';">
+                    <span class="icon"><i class="fa-brands fa-steam"></i></span>
+                    <span class="text">Steam</span>
+                </span>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink(){
+            list.forEach((item) => 
+            item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) => 
+        item.addEventListener('mousemove', activeLink));
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

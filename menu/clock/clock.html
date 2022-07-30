@@ -1,38 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <title>Clock</title>
     <link rel="stylesheet" href="css/clock.css">
+    <script src="javascript/jquery-1.12.3.js"></script>
+    <script src="javascript/tabmenu.js"></script>
 </head>
 
 <body>
     <div class="back">
-        <a href="../../index.html"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
+        <a href="../../index.html">
+            <ion-icon name="arrow-back-circle-outline"></ion-icon>
+        </a>
     </div>
-    <div class="container">
-        <div class="clock">
-            <div class="circle" id="sc" style="--clr: #55f;"><i></i></div>
-            <div class="circle circle2" id="mn" style="--clr: #5f5;"><i></i></div>
-            <div class="circle circle3" id="hr" style="--clr: #f55;"><i></i></div>
-            <span style="--i:1;"><b>1</b></span>
-            <span style="--i:2;"><b>2</b></span>
-            <span style="--i:3;"><b>3</b></span>
-            <span style="--i:4;"><b>4</b></span>
-            <span style="--i:5;"><b>5</b></span>
-            <span style="--i:6;"><b>6</b></span>
-            <span style="--i:7;"><b>7</b></span>
-            <span style="--i:8;"><b>8</b></span>
-            <span style="--i:9;"><b>9</b></span>
-            <span style="--i:10;"><b>10</b></span>
-            <span style="--i:11;"><b>11</b></span>
-            <span style="--i:12;"><b>12</b></span>
-        </div>
-        
-        <div id="time">
-            <div id="hours" style="--clr: #f55;">00</div>
-            <div id="minutes" style="--clr: #5f5;">00</div>
-            <div id="seconds" style="--clr: #55f;">00</div>
-            <div id="ampm" style="--clr: #fff;">AM</div>
+    <div class="contents">
+        <section id="tab-1" class="tab_content">
+            <div class="container">
+                <div class="clock">
+                    <div class="circle" id="sc" style="--clr: #55f;"><i></i></div>
+                    <div class="circle circle2" id="mn" style="--clr: #5f5;"><i></i></div>
+                    <div class="circle circle3" id="hr" style="--clr: #f55;"><i></i></div>
+                    <span style="--i:1;"><b>1</b></span>
+                    <span style="--i:2;"><b>2</b></span>
+                    <span style="--i:3;"><b>3</b></span>
+                    <span style="--i:4;"><b>4</b></span>
+                    <span style="--i:5;"><b>5</b></span>
+                    <span style="--i:6;"><b>6</b></span>
+                    <span style="--i:7;"><b>7</b></span>
+                    <span style="--i:8;"><b>8</b></span>
+                    <span style="--i:9;"><b>9</b></span>
+                    <span style="--i:10;"><b>10</b></span>
+                    <span style="--i:11;"><b>11</b></span>
+                    <span style="--i:12;"><b>12</b></span>
+                </div>
+                <div id="time">
+                    <div id="hours" style="--clr: #f55;">00</div>
+                    <div id="minutes" style="--clr: #5f5;">00</div>
+                    <div id="seconds" style="--clr: #55f;">00</div>
+                    <div id="ampm" style="--clr: #fff;">AM</div>
+                </div>
+            </div>
+        </section>
+        <section id="tab-2" class="tab_content">
+            <div class='container'>
+                <div class='js-alarm nav'>
+                    <span class="text">00:00:00</span>
+                    <input type='time' min='00:00' max='23:59'>
+                </div>
+            </div>
+        </section>
+        <section id="tab-3" class="tab_content current">
+            <div class="container">
+                <div class="time">
+                    <span id="postMinute">00</span>
+                    <span id="postSecond">00</span>
+                    <span id="postMilisecond">00</span>
+                </div>
+                <div class="list">
+                    <ul id="RecordList"></ul>
+                </div>
+                <div class="btn">
+                    <button type="button" id="StartBtn">START</button>
+                    <button type="button" id="StopBtn">STOP</button>
+                </div>
+            </div>
+        </section>
+        <div class="navigation">
+            <ul class="tabmenu tabnav_ul">
+                <li class="tab_link" data-tab="tab-1">
+                    <span class="a">
+                        <span class="icon">
+                            <ion-icon name="time-outline"></ion-icon>
+                        </span>
+                        <span class="text">Clock</span>
+                    </span>
+                </li>
+                <li class="tab_link" data-tab="tab-2">
+                    <span class="a">
+                        <span class="icon">
+                            <ion-icon name="alarm-outline"></ion-icon>
+                        </span>
+                        <span class="text">Alarm</span>
+                    </span>
+                </li>
+                <li class="tab_link current" data-tab="tab-3">
+                    <span class="a">
+                        <span class="icon">
+                            <ion-icon name="stopwatch-outline"></ion-icon>
+                        </span>
+                        <span class="text">Stopwatch</span>
+                    </span>
+                </li>
+                <li class="tab_link" data-tab="tab-4">
+                    <span class="a">
+                        <span class="icon">
+                            <ion-icon name="timer-outline"></ion-icon>
+                        </span>
+                        <span class="text">Timer</span>
+                    </span>
+                </li>
+                <div class="indicator"></div>
+            </ul>
         </div>
     </div>
     <script>
@@ -61,7 +130,7 @@
             let s = new Date().getSeconds();
             let amorpm = (h >= 12) ? "PM" : "AM";
 
-            if(h>12){
+            if (h > 12) {
                 h = h - 12;
             }
 
@@ -77,5 +146,7 @@
     </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="javascript/stopwatch.js"></script>
 </body>
+
 </html>

@@ -5,13 +5,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: #2f363e;
+}
+ul, ol, li{
+    list-style: none;
 }
 div.back{
     position: fixed;
@@ -25,7 +27,127 @@ div.back a{
 div.back a ion-icon{
     font-size: 4em;
 }
-.container{
+.contents{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.navigation{
+    bottom: 10px;
+    width: 500px;
+    height: 100px;
+    background: #fff;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.navigation ul{
+    display: flex;
+    width: 400px;
+}
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+}
+.navigation ul li .a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+.navigation ul li .a .icon{
+    position: relative;
+    display: block;
+    line-height: 70px;
+    font-size: 2.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: #2f363e;
+}
+.navigation ul li.current .a .icon{
+    transform: translateY(-45px);
+}
+.navigation ul li .a .text{
+    position: absolute;
+    color: #2f363e;
+    font-weight: 400;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(50px);
+}
+.navigation ul li.current .a .text{
+    opacity: 1;
+    transform: translateY(20px);
+}
+.indicator{
+    position: absolute;
+    top: -50%;
+    width: 100px;
+    height: 100px;
+    background: #29fd53;
+    border-radius: 50%;
+    border: 6px solid #2f363e;
+    transition: 0.5s;
+}
+.indicator::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 1px -10px 0 0 #2f363e;
+}
+.indicator::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: -1px -10px 0 0 #2f363e;
+}
+
+.navigation ul li:nth-child(1).current ~ .indicator{
+    transform: translateX(calc(100px * 0));
+}
+.navigation ul li:nth-child(2).current ~ .indicator{
+    transform: translateX(calc(100px * 1));
+}
+.navigation ul li:nth-child(3).current ~ .indicator{
+    transform: translateX(calc(100px * 2));
+}
+.navigation ul li:nth-child(4).current ~ .indicator{
+    transform: translateX(calc(100px * 3));
+}
+section{
+    margin-bottom: 150px;
+}
+.tab_content{
+    display: none;
+}
+.tab_content.current{
+    display: flex;
+}
+#tab-1 .container{
     position: relative;
     /* min-height: 500px; */
     border-radius: 225px 225px 20px 20px;
@@ -41,7 +163,7 @@ div.back a ion-icon{
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.75);
 }
-.clock{
+#tab-1 .clock{
     position: relative;
     width: 450px;
     height: 450px;
@@ -57,7 +179,7 @@ div.back a ion-icon{
     margin-bottom: 30px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.75);
 }
-.clock::before{
+#tab-1 .clock::before{
     content: '';
     position: absolute;
     width: 8px;
@@ -67,21 +189,21 @@ div.back a ion-icon{
     border-radius: 50%;
     z-index: 100000;
 }
-.clock span{
+#tab-1 .clock span{
     position: absolute;
     inset: 20px;
     color: #fff;
     text-align: center;
     transform: rotate(calc(30deg * var(--i)));
 }
-.clock span b{
+#tab-1 .clock span b{
     font-size: 2em;
     opacity: 0.25;
     font-weight: 600;
     display: inline-block;
     transform: rotate(calc(-30deg * var(--i)));
 }
-.circle{
+#tab-1 .circle{
     position: absolute;
     width:300px;
     height:300px;
@@ -92,7 +214,7 @@ div.back a ion-icon{
     align-items: start;
     z-index: 10;
 }
-.circle i{
+#tab-1 .circle i{
     position: absolute;
     width:6px;
     height:100%;
@@ -102,24 +224,24 @@ div.back a ion-icon{
     opacity: 0.75;
     transform: scaleY(0.5);
 }
-.circle:nth-child(1) i{
+#tab-1 .circle:nth-child(1) i{
     width: 2px;
 }
-.circle:nth-child(2) i{
+#tab-1 .circle:nth-child(2) i{
     width: 6px;
 }
-.circle.circle2{
+#tab-1 .circle.circle2{
     width:240px;
     height:240px;
     z-index: 9;
 }
-.circle.circle3{
+#tab-1 .circle.circle3{
     width:180px;
     height:180px;
     z-index: 8;
 }
 
-#time{
+#tab-1 #time{
     margin-bottom: 40px;
     display: flex;
     padding: 10px 20px;
@@ -131,27 +253,27 @@ div.back a ion-icon{
     inset 5px 5px 20px rgba(255,255,255,0.2),
     inset -5px -5px 15px rgba(0,0,0,0.75);
 }
-#time div{
+#tab-1 #time div{
     position: relative;
     width: 60px;
     text-align: center;
     font-weight: 500;
     color: var(--clr);
 }
-#time div:nth-child(1)::after, #time div:nth-child(2)::after{
+#tab-1 #time div:nth-child(1)::after, #time div:nth-child(2)::after{
     content: ':';
     position: absolute;
     top:-2px;
     color: #fff;
     right: -2px;
 }
-#time div:last-child{
+#tab-1 #time div:last-child{
     font-size: 0.5em;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#time div:nth-child(2)::after{
+#tab-1 #time div:nth-child(2)::after{
     animation: animate 1s steps(1) infinite;
 }
 @keyframes animate{
@@ -161,4 +283,25 @@ div.back a ion-icon{
     50%{
         opacity: 0;
     }
+}
+
+#tab-2 .container{
+    width: 400px;
+    height: 500px;
+    border: 1px solid rgba(0,0,0,0.75);
+    box-shadow: 25px 25px 75px rgba(0,0,0,0.75),
+    10px 10px 70px rgba(0,0,0,0.25),
+    inset 5px 5px 10px rgba(0,0,0,0.5),
+    inset 5px 5px 20px rgba(255,255,255,0.2),
+    inset -5px -5px 15px rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+#tab-2 .container .nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

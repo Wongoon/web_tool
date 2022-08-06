@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/clock.css">
     <script src="javascript/jquery-1.12.3.js"></script>
     <script src="javascript/tabmenu.js"></script>
+    <script src="https://cdn.jsdelivr.net/combine/npm/pickerjs@1.2.1/dist/picker.min.js,npm/easytimer.js@4.3.0/dist/easytimer.min.js"></script>
 </head>
 
 <body>
@@ -43,26 +44,30 @@
             </div>
         </section>
         <section id="tab-2" class="tab_content">
-            <div class='container'>
-                <div class='js-alarm nav'>
-                    <span class="text">00:00:00</span>
-                    <input type='time' min='00:00' max='23:59'>
+            <div class="container">
+                <div class="left_container">
+                    <div class="time">
+                        <span id="postMinute" style="--clr: #f55;">00</span>
+                        <span id="postSecond" style="--clr: #5f5;">00</span>
+                        <span id="postMilisecond" style="--clr: #55f;">00</span>
+                    </div>
+                    <div class="btn">
+                        <button type="button" id="StartBtn">START</button>
+                        <button type="button" id="StopBtn">STOP</button>
+                    </div>
+                </div>
+                <div class="list">
+                    <ul id="RecordList">
+                    </ul>
                 </div>
             </div>
         </section>
         <section id="tab-3" class="tab_content current">
             <div class="container">
-                <div class="time">
-                    <span id="postMinute">00</span>
-                    <span id="postSecond">00</span>
-                    <span id="postMilisecond">00</span>
-                </div>
-                <div class="list">
-                    <ul id="RecordList"></ul>
-                </div>
-                <div class="btn">
-                    <button type="button" id="StartBtn">START</button>
-                    <button type="button" id="StopBtn">STOP</button>
+                <div class="timer_time">
+                    <span id="hour" style="--clr: #f55;">00</span>
+                    <span id="minute" style="--clr: #5f5;">00</span>
+                    <span id="second" style="--clr: #55f;">00</span>
                 </div>
             </div>
         </section>
@@ -79,20 +84,12 @@
                 <li class="tab_link" data-tab="tab-2">
                     <span class="a">
                         <span class="icon">
-                            <ion-icon name="alarm-outline"></ion-icon>
-                        </span>
-                        <span class="text">Alarm</span>
-                    </span>
-                </li>
-                <li class="tab_link current" data-tab="tab-3">
-                    <span class="a">
-                        <span class="icon">
                             <ion-icon name="stopwatch-outline"></ion-icon>
                         </span>
                         <span class="text">Stopwatch</span>
                     </span>
                 </li>
-                <li class="tab_link" data-tab="tab-4">
+                <li class="tab_link current" data-tab="tab-3">
                     <span class="a">
                         <span class="icon">
                             <ion-icon name="timer-outline"></ion-icon>
@@ -104,49 +101,11 @@
             </ul>
         </div>
     </div>
-    <script>
-        let hr = document.querySelector('#hr');
-        let mn = document.querySelector('#mn');
-        let sc = document.querySelector('#sc');
-
-        setInterval(() => {
-
-            let day = new Date();
-            let hh = day.getHours() * 30;
-            let mm = day.getMinutes() * 6;
-            let ss = day.getSeconds() * 6;
-
-            hr.style.transform = `rotateZ(${hh + (mm / 12) + 180}deg)`;
-            mn.style.transform = `rotateZ(${mm + 180}deg)`;
-            sc.style.transform = `rotateZ(${ss + 180}deg)`;
-
-            let hours = document.getElementById('hours');
-            let minutes = document.getElementById('minutes');
-            let seconds = document.getElementById('seconds');
-            let ampm = document.getElementById('ampm');
-
-            let h = new Date().getHours();
-            let m = new Date().getMinutes();
-            let s = new Date().getSeconds();
-            let amorpm = (h >= 12) ? "PM" : "AM";
-
-            if (h > 12) {
-                h = h - 12;
-            }
-
-            h = (h < 10) ? "0" + h : h;
-            m = (m < 10) ? "0" + m : m;
-            s = (s < 10) ? "0" + s : s;
-            hours.innerHTML = h;
-            minutes.innerHTML = m;
-            seconds.innerHTML = s;
-            ampm.innerHTML = amorpm;
-        });
-
-    </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="javascript/stopwatch.js"></script>
+    <script src="javascript/clock.js"></script>
+    <script src="javascript/timer.js"></script>
 </body>
 
 </html>

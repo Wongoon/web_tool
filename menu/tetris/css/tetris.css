@@ -12,6 +12,18 @@ body{
     min-height: 100vh;
     background-color: rgb(9,17,26);
 }
+div.back{
+    position: fixed;
+    left:15px;
+    top:25px;
+}
+div.back a{
+    text-decoration: none;
+    color:#fff;
+}
+div.back a ion-icon{
+    font-size: 4em;
+}
 td{
     width: 14px;
     height: 14px;

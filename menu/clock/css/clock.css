@@ -5,12 +5,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --first: #f5f;
+    --second: #ff5;
+    --third: #5ff;
+    --mainclr: #2b2b37;
+}
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #2f363e;
+    background: var(--mainclr);
 }
 ul, ol, li{
     list-style: none;
@@ -74,14 +80,14 @@ div.back a ion-icon{
     font-size: 2.7em;
     text-align: center;
     transition: 0.5s;
-    color: #2f363e;
+    color: var(--mainclr);
 }
 .navigation ul li.current .a .icon{
     transform: translateY(-55px);
 }
 .navigation ul li .a .text{
     position: absolute;
-    color: #2f363e;
+    color: var(--mainclr);
     font-weight: 400;
     font-size: 1.2em;
     letter-spacing: 0.05em;
@@ -100,7 +106,7 @@ div.back a ion-icon{
     height: 120px;
     background: #29fd53;
     border-radius: 50%;
-    border: 6px solid #2f363e;
+    border: 6px solid var(--mainclr);
     transition: 0.5s;
 }
 .indicator::before{
@@ -112,7 +118,7 @@ div.back a ion-icon{
     height: 20px;
     background: transparent;
     border-top-right-radius: 20px;
-    box-shadow: 1px -10px 0 0 #2f363e;
+    box-shadow: 1px -10px 0 0 var(--mainclr);
 }
 .indicator::after{
     content: '';
@@ -123,17 +129,20 @@ div.back a ion-icon{
     height: 20px;
     background: transparent;
     border-top-left-radius: 20px;
-    box-shadow: -1px -10px 0 0 #2f363e;
+    box-shadow: -1px -10px 0 0 var(--mainclr);
 }
 
 .navigation ul li:nth-child(1).current ~ .indicator{
     transform: translateX(calc(120px * 0));
+    background-color: #f5f;
 }
 .navigation ul li:nth-child(2).current ~ .indicator{
     transform: translateX(calc(120px * 1));
+    background-color: #ff5;
 }
 .navigation ul li:nth-child(3).current ~ .indicator{
     transform: translateX(calc(120px * 2));
+    background-color: #5ff;
 }
 section{
     margin-bottom: 150px;
@@ -146,9 +155,8 @@ section{
 }
 #tab-1 .container{
     position: relative;
-    /* min-height: 500px; */
     border-radius: 225px 225px 20px 20px;
-    background: #2f363e;
+    background: var(--mainclr);
     box-shadow: 25px 25px 75px rgba(0,0,0,0.75),
     10px 10px 70px rgba(0,0,0,0.25),
     inset 5px 5px 10px rgba(0,0,0,0.5),
@@ -164,7 +172,7 @@ section{
     position: relative;
     width: 450px;
     height: 450px;
-    background: #2f363e;
+    background: var(--mainclr);
     border-radius: 50%;
     box-shadow: 10px 50px 70px rgba(0,0,0,0.25),
     inset 5px 5px 10px rgba(0,0,0,0.5),
@@ -181,7 +189,7 @@ section{
     position: absolute;
     width: 8px;
     height: 8px;
-    background: #2f363e;
+    background: var(--mainclr);
     border: 3px solid #fff;
     border-radius: 50%;
     z-index: 100000;
@@ -249,27 +257,30 @@ section{
     inset 5px 5px 20px rgba(255,255,255,0.2),
     inset -5px -5px 15px rgba(0,0,0,0.75);
 }
-#tab-1 #time div{
+#tab-1 #time span{
     position: relative;
     width: 60px;
     text-align: center;
     font-weight: 500;
-    color: var(--clr);
+    color: #fff;
+    filter: drop-shadow(0 0 2px var(--clr)) drop-shadow(0 0 5px var(--clr)) drop-shadow(0 0 15px var(--clr))
 }
-#tab-1 #time div:nth-child(1)::after, #time div:nth-child(2)::after{
+#tab-1 #time span:nth-child(1)::after, #time span:nth-child(2)::after{
     content: ':';
     position: absolute;
     top:-2px;
     color: #fff;
     right: -2px;
+    filter: none;
 }
-#tab-1 #time div:last-child{
+#tab-1 #time span:last-child{
     font-size: 0.5em;
     display: flex;
     justify-content: center;
     align-items: center;
+    filter: none;
 }
-#tab-1 #time div:nth-child(2)::after{
+#tab-1 #time span:nth-child(2)::after{
     animation: animate 1s steps(1) infinite;
 }
 @keyframes animate{
@@ -318,7 +329,7 @@ section{
     font-size: 4em;
     color: var(--clr);
 }
-#tab-2 .time span:nth-child(1)::after, .time span:nth-child(2)::after{
+#tab-2 .time span:nth-child(1)::after, #tab-2 .time span:nth-child(2)::after{
     content: ':';
     position: relative;
     top:-2px;
@@ -341,7 +352,8 @@ section{
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
     0 1px 3px rgba(0, 0, 0, 0.068);
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--mainclr);
+    padding: 2px;
     color: rgba(0, 0, 0, 0.8);
     font-weight: 600;
     font-size: 1.5em;
@@ -349,7 +361,7 @@ section{
 }
 #tab-2 .btn button:hover{
     color: #f68500;
-    background-color: #2b2b37;
+    background-color: #2f363e;
 }
 #tab-2 .btn button:active{
     transform: scale(0.95);
@@ -368,6 +380,7 @@ section{
     align-items: center;
     border-radius: 20px;
 }
-#tab-3 .timer_time span{
+#tab-3 .timer.time span{
+    font-size: 4em;
     color: var(--clr);
 }

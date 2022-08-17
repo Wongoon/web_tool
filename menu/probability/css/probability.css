@@ -94,6 +94,7 @@ button{
     font-size: 4em;
     outline: none;
     line-height: 0;
+    cursor: pointer;
 }
 .add_btn{
     border: 7px outset #66f;

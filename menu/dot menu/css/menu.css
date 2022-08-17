@@ -10,17 +10,27 @@ body{
     min-height: 100vh;
     background:#10131c;
 }
-div.back{
+.index{
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
     position: absolute;
-    left:10px;
-    top:10px;
+    top: 20px;
+    right: 20px;
 }
-div.back a{
-    text-decoration: none;
-    color:#ddd;
-}
-div.back a ion-icon{
+.index a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #111;
     font-size: 4em;
+    transition: 0.5s;
+}
+.index a:hover{
+    color: #ff1252;
 }
 .navigation{
     position: relative;

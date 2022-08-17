@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/clock.css">
     <script src="javascript/jquery-1.12.3.js"></script>
     <script src="javascript/tabmenu.js"></script>
+    <script src="javascript/hangul.js"></script>
     <script src="https://cdn.jsdelivr.net/combine/npm/pickerjs@1.2.1/dist/picker.min.js,npm/easytimer.js@4.3.0/dist/easytimer.min.js"></script>
 </head>
 
@@ -64,15 +65,15 @@
         </section>
         <section id="tab-3" class="tab_content current">
             <div class="container">
-                <div class="timer time">
-                    <span id="hour" style="--clr: #f55;">00</span>
-                    <span id="minute" style="--clr: #5f5;">00</span>
-                    <span id="second" style="--clr: #55f;">00</span>
-                </div>
-                <div class="timer button">
-                    <button class="timer resetbtn">Timer Settings</button>
-                    <button class="timer startbtn">Start</button>
-                </div>
+                <form autocomplete="off" class="form"> 
+                    <div class="input">
+                        <input type="text" id="input" placeholder="나라를 입력하세요..">
+                        <span id="test"></span>
+                    </div>
+                    <ul class="list">
+
+                    </ul>
+                </form>
             </div>
         </section>
         <div class="navigation">
@@ -96,9 +97,9 @@
                 <li class="tab_link current" data-tab="tab-3">
                     <span class="a">
                         <span class="icon">
-                            <ion-icon name="timer-outline"></ion-icon>
+                            <ion-icon name="earth-outline"></ion-icon>
                         </span>
-                        <span class="text">Timer</span>
+                        <span class="text">World Clock</span>
                     </span>
                 </li>
                 <div class="indicator"></div>
@@ -110,6 +111,7 @@
     <script src="javascript/stopwatch.js"></script>
     <script src="javascript/clock.js"></script>
     <script src="javascript/timer.js"></script>
+    <script src="javascript/worldclock.js"></script>
 </body>
 
 </html>

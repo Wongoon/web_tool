@@ -42,7 +42,7 @@ div.back a ion-icon{
 }
 .navigation{
     bottom: 10px;
-    width: 420px;
+    width: 550px;
     height: 120px;
     background: #fff;
     position: fixed;
@@ -53,13 +53,13 @@ div.back a ion-icon{
 }
 .navigation ul{
     display: flex;
-    width: 360px;
+    width: 450px;
 }
 .navigation ul li{
     position: relative;
     list-style: none;
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     z-index: 1;
 }
 .navigation ul li .a{
@@ -76,14 +76,14 @@ div.back a ion-icon{
 .navigation ul li .a .icon{
     position: relative;
     display: block;
-    line-height: 70px;
+    line-height: 5px;
     font-size: 2.7em;
     text-align: center;
     transition: 0.5s;
     color: var(--mainclr);
 }
 .navigation ul li.current .a .icon{
-    transform: translateY(-55px);
+    transform: translateY(-65px);
 }
 .navigation ul li .a .text{
     position: absolute;
@@ -93,17 +93,17 @@ div.back a ion-icon{
     letter-spacing: 0.05em;
     transition: 0.5s;
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(60px);
 }
 .navigation ul li.current .a .text{
     opacity: 1;
-    transform: translateY(20px);
+    transform: translateY(30px);
 }
 .indicator{
     position: absolute;
-    top: -50%;
-    width: 120px;
-    height: 120px;
+    top: -63%;
+    width: 150px;
+    height: 150px;
     background: #29fd53;
     border-radius: 50%;
     border: 6px solid var(--mainclr);
@@ -133,15 +133,15 @@ div.back a ion-icon{
 }
 
 .navigation ul li:nth-child(1).current ~ .indicator{
-    transform: translateX(calc(120px * 0));
+    transform: translateX(calc(150px * 0));
     background-color: #f5f;
 }
 .navigation ul li:nth-child(2).current ~ .indicator{
-    transform: translateX(calc(120px * 1));
+    transform: translateX(calc(150px * 1));
     background-color: #ff5;
 }
 .navigation ul li:nth-child(3).current ~ .indicator{
-    transform: translateX(calc(120px * 2));
+    transform: translateX(calc(150px * 2));
     background-color: #5ff;
 }
 section{
@@ -380,7 +380,13 @@ section{
     align-items: center;
     border-radius: 20px;
 }
-#tab-3 .timer.time span{
-    font-size: 4em;
-    color: var(--clr);
+#input[type="text"]{
+    width: 100%;
+    padding: 15px 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #645979;
+    border-radius: 5px 5px 0 0;
+    background: #fff;
+    font-size: 16px;
 }

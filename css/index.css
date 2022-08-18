@@ -71,8 +71,11 @@ body{
 .menu li a:hover{
     color:#ff1252;
 }
-.menu li a ion-icon, .menu li a i{
+.menu li a ion-icon{
     font-size:2em;
+}
+.menu li a i{
+    font-size: 1.8em;
 }
 .toggle{
     position: absolute;

@@ -23,7 +23,7 @@ ul, ol, li{
 }
 div.back{
     position: fixed;
-    left:15px;
+    left:20px;
     top:25px;
 }
 div.back a{
@@ -367,8 +367,8 @@ section{
     transform: scale(0.95);
 }
 #tab-3 .container{
-    width: 600px;
-    height: 500px;
+    width: 1200px;
+    height: 600px;
     border: 1px solid rgba(0,0,0,0.75);
     box-shadow: 25px 25px 75px rgba(0,0,0,0.75),
     10px 10px 70px rgba(0,0,0,0.25),
@@ -378,15 +378,8 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 30px;
 }
-#input[type="text"]{
-    width: 100%;
-    padding: 15px 10px;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #645979;
-    border-radius: 5px 5px 0 0;
-    background: #fff;
-    font-size: 16px;
+#tab-3 .contents{
+    
 }

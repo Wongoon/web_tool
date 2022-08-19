@@ -69,15 +69,15 @@ body{
     height:90px;
     background:#333849;
 }
-.navigation a ion-icon{
+.navigation a ion-icon, i{
     transition:0.5s;
     font-size: 0em;
 }
-.navigation.active a ion-icon{
+.navigation.active a ion-icon, i{
     font-size:2.7em;
     color:#fff;
 }
-.navigation.active a:hover ion-icon{
+.navigation.active a:hover ion-icon, i{
     color:#2dfc52;
     filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52) drop-shadow(0 0 15px #2dfc52);
 
@@ -101,7 +101,7 @@ body{
     height:90px;
     background:#333849;
 }
-.navigation span ion-icon{
+.navigation span ion-icon, i{
     transition:0.5s;
     font-size: 0em;
 }

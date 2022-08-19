@@ -10,8 +10,8 @@ a{
 }
 div.back{
     position: absolute;
-    left:10px;
-    top:10px;
+    left:20px;
+    top:25px;
 }
 div.back a{
     text-decoration: none;

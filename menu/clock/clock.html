@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/clock.css">
     <script src="javascript/jquery-1.12.3.js"></script>
     <script src="javascript/tabmenu.js"></script>
-    <script src="javascript/hangul.js"></script>
     <script src="https://cdn.jsdelivr.net/combine/npm/pickerjs@1.2.1/dist/picker.min.js,npm/easytimer.js@4.3.0/dist/easytimer.min.js"></script>
 </head>
 
@@ -16,7 +15,7 @@
             <ion-icon name="arrow-back-circle-outline"></ion-icon>
         </a>
     </div>
-    <div class="contents">
+    <div class="content">
         <section id="tab-1" class="tab_content">
             <div class="container">
                 <div class="clock">
@@ -68,37 +67,97 @@
                 <div class="contents">
                     <div class="text">Korea, Seoul</div>
                     <div class="time">
-                        <span id="korea_hour" class="hour">00</span>
-                        <span id="korea_minute" class="minute">00</span>
-                        <span id="korea_second" class="second">00</span>
-                        <span id="korea_ampm" class="ampm"></span>
+                        <span id="korea_hour" class="hour" style="--clr: #f55;">00</span>
+                        <span id="korea_minute" class="minute" style="--clr: #5f5;">00</span>
+                        <span id="korea_second" class="second" style="--clr: #55f;">00</span>
                     </div>
                 </div>
                 <div class="contents">
                     <div class="text">Japan, Dokyo</div>
                     <div class="time">
-                        <span id="japan_hour" class="hour">00</span>
-                        <span id="japan_minute" class="minute">00</span>
-                        <span id="japan_second" class="second">00</span>
-                        <span id="japan_ampm" class="ampm"></span>
+                        <span id="japan_hour" class="hour" style="--clr: #f55;">00</span>
+                        <span id="japan_minute" class="minute" style="--clr: #5f5;">00</span>
+                        <span id="japan_second" class="second" style="--clr: #55f;">00</span>
                     </div>
                 </div>
                 <div class="contents">
                     <div class="text">China, Shanghai</div>
                     <div class="time">
-                        <span id="china_hour" class="hour">00</span>
-                        <span id="china_minute" class="minute">00</span>
-                        <span id="china_second" class="second">00</span>
-                        <span id="china_ampm" class="ampm"></span>
+                        <span id="china_hour" class="hour" style="--clr: #f55;">00</span>
+                        <span id="china_minute" class="minute" style="--clr: #5f5;">00</span>
+                        <span id="china_second" class="second" style="--clr: #55f;">00</span>
                     </div>
                 </div>
                 <div class="contents">
                     <div class="text">Taiwan, Taipei</div>
                     <div class="time">
-                        <span id="china_hour" class="hour">00</span>
-                        <span id="china_minute" class="minute">00</span>
-                        <span id="china_second" class="second">00</span>
-                        <span id="china_ampm" class="ampm"></span>
+                        <span id="taiwan_hour" class="hour" style="--clr: #f55;">00</span>
+                        <span id="taiwan_minute" class="minute" style="--clr: #5f5;">00</span>
+                        <span id="taiwan_second" class="second" style="--clr: #55f;">00</span>
+                    </div>
+                </div>
+                <div class="contents">
+                    <div class="text">Philippines, Manila</div>
+                    <div class="time">
+                        <span id="philippines_hour" class="hour" style="--clr: #f55;">00</span>
+                        <span id="philippines_minute" class="minute" style="--clr: #5f5;">00</span>
+                        <span id="philippines_second" class="second" style="--clr: #55f;">00</span>
+                    </div>
+                </div>
+                <div class="contents">
+                    <div class="text">Thailand, Bangkok</div>
+                    <div class="time">
+                        <span id="thailand_hour" class="hour" style="--clr: #f55;">00</span>
+                        <span id="thailand_minute" class="minute" style="--clr: #5f5;">00</span>
+                        <span id="thailand_second" class="second" style="--clr: #55f;">00</span>
+                    </div>
+                </div>
+                <div class="contents">
+                    <div class="text">Russia, Moscow</div>
+                    <div class="time">
+                        <span id="russia_hour" class="hour" style="--clr: #f55;">00</span>
+                        <span id="russia_minute" class="minute" style="--clr: #5f5;">00</span>
+                        <span id="russia_second" class="second" style="--clr: #55f;">00</span>
+                    </div>
+                </div>
+                <div class="contents">
+                    <div class="text">Germany, Berlin</div>
+                    <div class="time">
+                        <span id="germany_hour" class="hour" style="--clr: #f55;">00</span>
+                        <span id="germany_minute" class="minute" style="--clr: #5f5;">00</span>
+                        <span id="germany_second" class="second" style="--clr: #55f;">00</span>
+                    </div>
+                </div>
+                <div class="contents">
+                    <div class="text">England, London</div>
+                    <div class="time">
+                        <span id="england_hour" class="hour" style="--clr: #f55;">00</span>
+                        <span id="england_minute" class="minute" style="--clr: #5f5;">00</span>
+                        <span id="england_second" class="second" style="--clr: #55f;">00</span>
+                    </div>
+                </div>
+                <div class="contents">
+                    <div class="text">United States, New York</div>
+                    <div class="time">
+                        <span id="us_hour" class="hour" style="--clr: #f55;">00</span>
+                        <span id="us_minute" class="minute" style="--clr: #5f5;">00</span>
+                        <span id="us_second" class="second" style="--clr: #55f;">00</span>
+                    </div>
+                </div>
+                <div class="contents">
+                    <div class="text">Canada, Toronto</div>
+                    <div class="time">
+                        <span id="canada_hour" class="hour" style="--clr: #f55;">00</span>
+                        <span id="canada_minute" class="minute" style="--clr: #5f5;">00</span>
+                        <span id="canada_second" class="second" style="--clr: #55f;">00</span>
+                    </div>
+                </div>
+                <div class="contents">
+                    <div class="text">Australia, Sydney</div>
+                    <div class="time">
+                        <span id="australia_hour" class="hour" style="--clr: #f55;">00</span>
+                        <span id="australia_minute" class="minute" style="--clr: #5f5;">00</span>
+                        <span id="australia_second" class="second" style="--clr: #55f;">00</span>
                     </div>
                 </div>
             </div>
@@ -137,7 +196,6 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="javascript/stopwatch.js"></script>
     <script src="javascript/clock.js"></script>
-    <script src="javascript/timer.js"></script>
     <script src="javascript/worldclock.js"></script>
 </body>
 

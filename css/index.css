@@ -68,6 +68,9 @@ body{
     color: #111;
     transition: 0.5s;
 }
+.toggle:hover{
+    color: #ff1252;
+}
 .menu li a:hover{
     color:#ff1252;
 }

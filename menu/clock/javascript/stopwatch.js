@@ -11,7 +11,6 @@ var stopBtn = document.getElementById('StopBtn');
 var recordList = document.getElementById('RecordList');
 startBtn.addEventListener('click', function () {
     if(this.innerText == 'RECORD' && milisec) {
-        console.log(min, sec, milisec);
         var li = document.createElement('li');
         li.style.color = "#fff";
         li.innerText = min + ' : ' + sec + ' : ' + milisec;

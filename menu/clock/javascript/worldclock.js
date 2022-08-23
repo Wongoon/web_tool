@@ -70,32 +70,37 @@ var england_offset = -8;
 var us_offset = -13;
 var canada_offset = -13;
 var australia_offset = 1;
-
+let day, hours, minutes, seconds;
 let korea_h, japan_h, china_h, taiwan_h, philippines_h, thailand_h, russia_h, germany_h, england_h, us_h, canada_h, australia_h;
-function addZero(hour, offset) {
-    return (hour + offset < 10 ? '0' + String(parseInt(hour) + parseInt(offset)) : String(hour + parseInt(offset)));
+function Zero(hour, offset) {
+    if (hour + offset < 0){
+        return 24 + hour + offset;
+    }
+    else{
+        return (hour + offset < 10 ? '0' + parseInt(hour + offset) : hour + offset);
+    }
 }
 setInterval(() => {
-    let day = new Date();
-    let hours = day.getHours();
-    let minutes = day.getMinutes();
-    let seconds = day.getSeconds();
+    day = new Date();
+    hours = day.getHours();
+    minutes = day.getMinutes();
+    seconds = day.getSeconds();
 
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     seconds = (seconds < 10) ? "0" + seconds : seconds;
 
-    korea_h = addZero(hours, korea_offset);
-    china_h = addZero(hours, china_offset);
-    taiwan_h = addZero(hours, taiwan_offset);
-    japan_h = addZero(hours, japan_offset);
-    philippines_h = addZero(hours, philippines_offset);
-    thailand_h = addZero(hours, thailand_offset);
-    russia_h = addZero(hours, russia_offset);
-    germany_h = addZero(hours, germany_offset);
-    england_h = addZero(hours, england_offset);
-    us_h = addZero(hours, us_offset);
-    canada_h = addZero(hours, canada_offset);
-    australia_h = addZero(hours, australia_offset);
+    korea_h = Zero(hours, korea_offset);
+    china_h = Zero(hours, china_offset);
+    taiwan_h = Zero(hours, taiwan_offset);
+    japan_h = Zero(hours, japan_offset);
+    philippines_h = Zero(hours, philippines_offset);
+    thailand_h = Zero(hours, thailand_offset);
+    russia_h = Zero(hours, russia_offset);
+    germany_h = Zero(hours, germany_offset);
+    england_h = Zero(hours, england_offset);
+    us_h = Zero(hours, us_offset);
+    canada_h = Zero(hours, canada_offset);
+    australia_h = Zero(hours, australia_offset);
 
 
 

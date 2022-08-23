@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>LostArk Ability Stone</title>
     <link rel="stylesheet" href="css/probability.css">
-    <script src="javascript/probability.js"></script>
 </head>
 
 <body>
@@ -14,12 +13,12 @@
         </a>
     </div>
     <div class="container">
-        <div class="stone"></div>
+        <div class="stone">어빌리티 스톤 세공</div>
         <span id="probability">75</span>
         <div class="contents">
             <div class="select">
-                <div class="first_select">증가 능력 1</div>
-                <div class="second_select">증가 능력 2</div>
+                <div class="first_select">각인 1</div>
+                <div class="second_select">각인 2</div>
                 <div class="minus_select">페널티 각인</div>
             </div>
             <div class="ability">
@@ -61,13 +60,14 @@
                 </div>
             </div>
             <div class="buttons">
-                <button class="add_btn" id="first_add_btn"><ion-icon name="hammer"></ion-icon></button>
-                <button class="add_btn" id="second_add_btn"><ion-icon name="hammer"></ion-icon></button>
-                <button class="minus_btn" id="minus_btn"><ion-icon name="hammer"></ion-icon></button>
+                <button class="add_btn btn" id="first_add_btn"><ion-icon name="hammer"></ion-icon></button>
+                <button class="add_btn btn" id="second_add_btn"><ion-icon name="hammer"></ion-icon></button>
+                <button class="minus_btn btn" id="minus_btn"><ion-icon name="hammer"></ion-icon></button>
             </div>
         </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="javascript/probability.js"></script>
 </body>
 </html>

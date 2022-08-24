@@ -72,6 +72,7 @@ body{
 .navigation a ion-icon{
     transition:0.5s;
     font-size: 0em;
+    color: #fff;
 }
 .navigation.active a ion-icon{
     font-size:2.7em;

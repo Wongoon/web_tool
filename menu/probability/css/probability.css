@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #99f, #33f);
+    background: linear-gradient(135deg, #01050c, #0c152b);
 }
 div.back{
     position: fixed;
@@ -28,12 +28,9 @@ div.back a ion-icon{
     width: 1240px;
     height: 940px;
     padding: 20px;
-    background-color: #2b2b37;
-    box-shadow: 25px 25px 75px rgba(0,0,0,0.75),
-    10px 10px 70px rgba(0,0,0,0.25),
-    inset 5px 5px 10px rgba(0,0,0,0.5),
-    inset 5px 5px 20px rgba(255,255,255,0.2),
-    inset -5px -5px 15px rgba(0,0,0,0.75);
+    background-color: #2b2b3750;
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.75),
+    0px 0px 50px rgba(0,0,0,0.25);
     border-radius: 25px;
 }
 .stone{
@@ -109,7 +106,7 @@ div.back a ion-icon{
     padding-right: 10px;
     flex-direction: column;
 }
-button{
+.btn{
     width: 250px;
     height: 180px;
     font-size: 4em;
@@ -129,6 +126,11 @@ button{
 }
 .add_btn:hover{
     background: #33f;
+    border-color: #44f;
+}
+.minus_btn:hover{
+    border-color: #f44;
+    background: #f33;
 }
 .btn:active{
     transform: scale(0.97);

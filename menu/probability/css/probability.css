@@ -55,6 +55,23 @@ div.back a ion-icon{
     left: 2px;
     font-size: 0.6em;
 }
+.counts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    transform: translateX(20px) translateY(-90px);
+    font-size: 3em;
+}
+.counts span:nth-child(2)::before{
+    content: '/';
+    margin: 0 10px;
+}
+.counts span:nth-child(2)::after{
+    content: '/';
+    margin: 0 10px;
+}
 .contents{
     display: flex;
     height: 600px;

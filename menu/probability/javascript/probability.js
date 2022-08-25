@@ -71,7 +71,7 @@ third_btn.addEventListener('click', function() {
             pro = (MIN_pro >= pro) ? MIN_pro : pro - 10;
             third_ct++;
             if (third_ct >= 5){
-                third_count.style.Color = '#f55';
+                third_count.style.color = '#f55';
             }
         }
         else{
@@ -101,6 +101,8 @@ reset_btn.addEventListener('click', function() {
     first_ct = 0;
     second_ct = 0;
     third_ct = 0;
+
+    third_count.style.color = '#fff';
 
     probability.innerHTML = pro;
     first_count.innerHTML = first_ct;

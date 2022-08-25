@@ -23,6 +23,7 @@ let third_count = document.getElementById('minus_count');
 let first_btn = document.getElementById('first_btn');
 let second_btn = document.getElementById('second_btn');
 let third_btn = document.getElementById('third_btn');
+let reset_btn = document.getElementById('reset');
 
 probability.innerHTML = pro;
 first_count.innerHTML = first_ct;
@@ -69,6 +70,9 @@ third_btn.addEventListener('click', function() {
             third.children[third_i].style.background = '#f55';
             pro = (MIN_pro >= pro) ? MIN_pro : pro - 10;
             third_ct++;
+            if (third_ct >= 5){
+                third_count.style.Color = '#f55';
+            }
         }
         else{
             third.children[third_i].style.borderColor = '#333';
@@ -78,4 +82,28 @@ third_btn.addEventListener('click', function() {
         third_count.innerHTML = third_ct;
         third_i++;
     }
+});
+
+reset_btn.addEventListener('click', function() {
+    for (var i = 0; i < 10; i++){
+        first.children[i].style.background = 'none';
+        first.children[i].style.borderColor = '#55f';
+        second.children[i].style.background = 'none';
+        second.children[i].style.borderColor = '#55f';
+        third.children[i].style.background = 'none';
+        third.children[i].style.borderColor = '#f55';
+    }
+    pro = 75;
+    first_i = 0;
+    second_i = 0;
+    third_i = 0;
+
+    first_ct = 0;
+    second_ct = 0;
+    third_ct = 0;
+
+    probability.innerHTML = pro;
+    first_count.innerHTML = first_ct;
+    second_count.innerHTML = second_ct;
+    third_count.innerHTML = third_ct;
 });

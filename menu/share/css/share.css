@@ -26,7 +26,7 @@ div.back a ion-icon{
 }
 .navigation{
     position: relative;
-    width: 800px;
+    width: 940px;
     height: 120px;
     background: #fff;
     display: flex;
@@ -36,7 +36,7 @@ div.back a ion-icon{
 }
 .navigation ul{
     display: flex;
-    width: 700px;
+    width: 840px;
 }
 .navigation ul li{
     list-style: none;
@@ -76,6 +76,13 @@ div.back a ion-icon{
     background: var(--c);
     color: #fff;
     transform: translateY(-54px);
+    transition-delay: 0.25s;
+}
+.navigation ul li.active:nth-child(6) .a .icon{
+    background: linear-gradient(120deg, #00adee, #000);
+    color: #fff;
+    transform: translateY(-54px);
+    transition: 0.5s;
     transition-delay: 0.25s;
 }
 .navigation ul li .a .text{

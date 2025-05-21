@@ -78,13 +78,6 @@ div.back a ion-icon{
     transform: translateY(-54px);
     transition-delay: 0.25s;
 }
-.navigation ul li.active:nth-child(6) .a .icon{
-    background: linear-gradient(120deg, #00adee, #000);
-    color: #fff;
-    transform: translateY(-54px);
-    transition: 0.5s;
-    transition-delay: 0.25s;
-}
 .navigation ul li .a .text{
     position: absolute;
     background: #2196f3;

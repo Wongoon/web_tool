@@ -142,6 +142,9 @@ div.back a ion-icon{
 .navigation ul li:nth-child(5).active ~ .indicator{
     transform: translateX(calc(140px * 4));
 }
+.navigation ul li:nth-child(6).active ~ .indicator{
+    transform: translateX(calc(140px * 5));
+}
 .navigation ul li .plus{
     position: absolute;
     top: -120px;
